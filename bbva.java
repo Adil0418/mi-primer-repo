@@ -46,6 +46,7 @@ class Banco {
         return cliente;
 }
 
+aqui estamos agregando algo
 void listarClientes() {
     for (int i = 0; i < clientes.length; i++){
         if (clientes[i] != null){
