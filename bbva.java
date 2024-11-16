@@ -14,12 +14,30 @@ class Persona{
     }
 }
 
+class Cuenta{
+    double saldo;
+    Cuenta(double saldoInicial){
+        saldo = saldoInicial;
+    }
+    void  cargar (double cantidad){
+        saldo = saldo - cantidad;
+    }
+    void abonar(double cantidad){
+        saldo = saldo + cantidad;
+    }
+}
+
 class Cliente extends Persona{
     int numero;
+    Cuenta cuenta;
 
     Cliente(String nombre, String sexo, int edad, int numero){
         super(nombre, sexo, edad);
         this.numero = numero;
+    }
+
+    void asociarCuenta(Cuenta cuenta){
+        this.cuenta = cuenta;
     }
 }
 
@@ -46,7 +64,6 @@ class Banco {
         return cliente;
 }
 
-aqui estamos agregando algo
 void listarClientes() {
     for (int i = 0; i < clientes.length; i++){
         if (clientes[i] != null){
